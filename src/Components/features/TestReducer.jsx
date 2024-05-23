@@ -52,7 +52,6 @@ const reducer = (state, action) => {
 };
 
 const Counter = () => {
-  // const [state, dispatch] = useReducer(reducer, initialState);
   const [state, dispatch] = useReducer(reducer, { load: false });
 
   return (
@@ -65,5 +64,6 @@ const Counter = () => {
     </>
   );
 };
+
 
 export default Counter;
