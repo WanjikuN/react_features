@@ -23,7 +23,7 @@ const createAlbum = async (albumData) => {
 // Read
 const getUsers = async() =>{
     try {
-        const response = await axiosPublic.get('/users/');
+        const response = await axiosPublic.get('/user/');
         return response.data
     } catch (error) {
         console.error("Error getting users", error);
