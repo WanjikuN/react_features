@@ -1,6 +1,6 @@
 import axiosPublic from "./axiosPublic";
 // CRUD
-// Optional chainning used => nullish coalescing
+// Optional chainning used => ??nullish coalescing
 // Create
 const createUser = async (userData) => {
   try {
