@@ -7,8 +7,8 @@ const LazyItem = () => {
       const fetchUsers = async () => {
         try {
           const data = await getUsers();
-          console.log(data);
-          setUsers(users);
+          // console.log(data);
+          setUsers(data);
         } catch (error) {
           console.error("Error fetching user", error);
         }

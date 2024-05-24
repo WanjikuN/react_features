@@ -19,7 +19,7 @@ const ConsumeAPIs = () => {
       try {
         const data = await getUsers();
         console.log(data);
-        setUsers(users);
+        setUsers(data);
       } catch (error) {
         console.error("Error fetching user", error);
       }
