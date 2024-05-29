@@ -19,24 +19,43 @@ import React, { useRef, useState, useEffect } from "react";
 //   );
 // }
 
-export default function PreviousStateExample() {
-  const [count, setCount] = useState(0);
-  const prevCountRef = useRef();
+export default function UseRefHook() {
+  //   const [count, setCount] = useState(0);
+  //   const prevCountRef = useRef();
 
-  useEffect(() => {
-    // Store the current count value in prevCountRef
-    console.log(prevCountRef);
-    prevCountRef.current = count;
-  }, [count]);
+  //   useEffect(() => {
+  //     // Store the current count value in prevCountRef
+  //     console.log(prevCountRef);
+  //     prevCountRef.current = count;
+  //   }, [count]);
 
-  const prevCount = prevCountRef.current;
+  //   const prevCount = prevCountRef.current;
+
+  //   return (
+  //     <div>
+  //       <h1>Current Count: {count}</h1>
+  //       <h2>Previous Count: {prevCount !== undefined ? prevCount : "N/A"}</h2>
+  //       <button onClick={() => setCount(count + 1)}>Increment</button>
+  //       <button onClick={() => setCount(count - 1)}>Decrement</button>
+  //     </div>
+  //   );
+  const inputRef = useRef(null);
+
+  const handleSubmit = () => {
+    const value = inputRef.current.value;
+    // Submit the form
+    displaySuccessMessage();
+  };
+
+  const displaySuccessMessage = () => {
+    // Display success message without clearing the input field
+    console.log("success")
+  };
 
   return (
     <div>
-      <h1>Current Count: {count}</h1>
-      <h2>Previous Count: {prevCount !== undefined ? prevCount : "N/A"}</h2>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <input ref={inputRef} />
+      <button onClick={handleSubmit}>Submit</button>
     </div>
   );
 }

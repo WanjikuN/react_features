@@ -4,7 +4,8 @@ import Counter from './Components/features/TestReducer';
 import ConsumeAPIs from './Components/features/axios/consumeAPIs';
 import LazyLoadedComponents from './Components/features/lazyLoading/LazyLoading';
 import ShoppingCart from './Components/features/UseMemoTest/UseMemoTest';
-import UseRefHook from './Components/features/hooks/UseStateHook';
+import UseRefHook from './Components/features/hooks/UseRefHook';
+import UseStateHook from './Components/features/hooks/UseStateHook';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
      <LazyLoadedComponents />
      <ShoppingCart />
      <UseRefHook />
+     <UseStateHook />
     </div>
   );
 }
