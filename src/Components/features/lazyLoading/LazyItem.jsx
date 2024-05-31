@@ -21,6 +21,13 @@ const LazyItem = () => {
   // console.log("Users", users);
 
   // console.log("Users",users)
-  return <div>This is a lazy-loaded component!</div>;
+  return(
+ <>
+    {users.map((user, index) => (
+      <div key={index}>{user.name}</div>
+    ))}
+  </>
+  )
+ 
 };
 export default LazyItem;
