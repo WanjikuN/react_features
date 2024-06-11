@@ -9,7 +9,9 @@ import UseStateHook from './Components/features/hooks/UseStateHook';
 import Loader1 from './Components/Loaders/loader1';
 
 function App() {
+ 
   return (
+
     <div className="App">
      <Counter />
      {/* <ConsumeAPIs /> */}

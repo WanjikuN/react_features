@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@eslint/compat": "^1.0.3",
+    "@sentry/cli": "^2.32.1",
+    "@sentry/react": "^8.7.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -14,9 +17,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "react-scripts start",
+    "build": "react-scripts build && npm run sentry:sourcemaps",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx}'",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org ce12f2c45a9f --project javascript-react ./ && sentry-cli sourcemaps upload --org ce12f2c45a9f --project javascript-react ./"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +42,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "globals": "^15.3.0"
   }
 }
